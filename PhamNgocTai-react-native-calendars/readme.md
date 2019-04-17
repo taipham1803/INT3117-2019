@@ -30,3 +30,32 @@
 #### **Đường đi số 5:** 1 &rarr; 2 &rarr; 4 &rarr; 6 &rarr; 9
 #### **Đường đi số 6:** 1 &rarr; 2 &rarr; 4 &rarr; 5 &rarr; 8 &rarr; 9
 ## **<u>Bước 3: Lập phương trình đường đi</u>**
+## Path Equations
+	
+	#### 1: True if process.env.JENKINS_CI === true && process.env.JENKINS_MASTER === true && process.env.GIT_BRANCH === ONLY_ON_BRANCH
+	#### 2: True if process.env.JENKINS_CI === false && process.env.JENKINS_MASTER === true && process.env.GIT_BRANCH === ONLY_ON_BRANCH
+	#### 3: False if process.env.JENKINS_CI === true && process.env.JENKINS_MASTER === false
+	#### 4: False if process.env.JENKINS_CI === true && process.env.GIT_BRANCH !== ONLY_ON_BRANCH
+  #### 5: False if process.env.JENKINS_CI === false && process.env.JENKINS_MASTER === false
+  #### 6: False if process.env.JENKINS_CI === false && process.env.GIT_BRANCH !== ONLY_ON_BRANCH
+  
+	
+## Solving
+- Test case 1:
+  - Input: process.env.JENKINS_CI === true && process.env.JENKINS_MASTER === true && process.env.GIT_BRANCH === ONLY_ON_BRANCH
+  - Output: true
+- Test case 2:
+  - Input: process.env.JENKINS_CI === false && process.env.JENKINS_MASTER === true && process.env.GIT_BRANCH === ONLY_ON_BRANCH
+  - Output: true
+- Test case 3:
+  - Input: process.env.JENKINS_CI === true && process.env.JENKINS_MASTER === false
+  - Output: false
+- Test case 4:
+  - Input: process.env.JENKINS_CI === true && process.env.GIT_BRANCH !== ONLY_ON_BRANCH
+  - Output: false
+- Test case 5:
+  - Input: False if process.env.JENKINS_CI === false && process.env.JENKINS_MASTER === false
+  - Output: false
+- Test case 6:
+  - Input: False if process.env.JENKINS_CI === false && process.env.GIT_BRANCH !== ONLY_ON_BRANCH
+  - Output: false
